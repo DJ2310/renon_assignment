@@ -18,15 +18,15 @@ const Variants: React.FC = () => {
     { color: 'red', size: 'medium', price: 45.00, available: 20 },
   ]);
 
-  const [col, setCol] = useState([]);
-  const [sz, setSz] = useState([])
+  const [col, setCol] = useState<string[]>(['blue', 'red']);
+  const [sz, setSz] = useState<string[]>(['small', 'medium'])
   const [groupBy, setGroupBy] = useState<string>('Size');
   const colorHandler = () =>{
-    const col=prompt("Color");
+    const col:string=prompt("Color")!
     setCol((prev) => [...prev, col]);
   }
   const sizeHandler = () =>{
-    const sz=prompt("Size");
+    const sz:string=prompt("Size")!
     setSz((prev) => [...prev, sz]);
   }
 
